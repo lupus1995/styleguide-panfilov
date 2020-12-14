@@ -42,6 +42,7 @@ module.exports = {
     'prettier',
   ],
   rules: {
+    'react/button-has-type': 'off',
     'import/no-named-as-default': 0,
     'import/no-cycle': 0,
     'no-new': 0,

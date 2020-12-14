@@ -4,6 +4,7 @@
   "description": "style guide for projects",
   "main": "build/index.js",
   "module": "build/index.es.js",
+  "homepage": "https://github.com/lupus1995/styleguide-panfilov/blob/master/README.md",
   "keywords": [
     "react",
     "styleguide",
@@ -50,6 +51,10 @@
   },
   "scripts": {
     "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lupus1995/styleguide-panfilov.git"
   },
   "author": "Panfilov Alexander",
   "license": "ISC"

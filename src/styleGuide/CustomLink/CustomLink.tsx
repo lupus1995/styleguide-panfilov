@@ -2,13 +2,17 @@ import React, { FC } from 'react';
 import './style.scss';
 import { Link } from 'react-router-dom';
 
-const CustomLink: FC<{ to: string; className?: string }> = ({
-  children,
-  to,
-  className = '',
-}) => {
+const CustomLink: FC<{
+  to: string;
+  className?: string;
+  textCenter?: boolean;
+}> = ({ children, to, textCenter = true, className = '' }) => {
   return (
-    <Link to={to} className={`link text-center ${className}`}>
+    <Link
+      to={to}
+      style={{ textAlign: textCenter ? 'center' : 'left' }}
+      className={`link ${className}`}
+    >
       {children}
     </Link>
   );

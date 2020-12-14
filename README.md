@@ -1,94 +1,59 @@
 ## Description
 
-React component that processes a form, its events and elements.
+Style guide react components for fast development
 
 ## Installation
 
 ```bash
-npm i --save form-panfilov
+npm i --save styleguide-panfilov
 ```
 
 ## Using
 
-Key component of the form
+Component Button
 
 ```bash
-<Form
-    data={defaultValue}
-    onSubmit={(fields: AuthUserFormInterface) => {
-        if (!fields.email.error && !fields.password.error) {
-            dispatch(
-                authRequestFunc({
-                  email: fields.email.value,
-                  password: fields.password.value,
-                  signal: abortController.signal,
-                }),
-            );
-        }
-    }}
-    className={classNames('d-flex flex-direction-column', {
-        disabled: authRequest,
-    })}
->
-other form elements
-</Form>
+<Button>
+    something text
+</Button>
 ```
 
 Props:
 
-- data - an array of objects that contain information about the form fields. Form fields must match the interface AuthUserFormInterface.
+- type - indicates the type of button, optional props, defaults to string 'button';
+- className - adding a class for a button, optional props, defaults to empty string. The component uses two default classes: button and primary(optional), they can be overridden;
+- primary - flag for connecting the primary class, optional props, defaults to false;
+
+Component CustomLink
 
 ```bash
-interface AuthUserFormInterface {
-    [key: string]: {
-        defaultValue: string;
-        defaultError: boolean;
-    };
-}
-```
-
-- onSubmit - a callback function that handles sending a function to the backend;;
-- classname - writes custom classes for the form tag;
-- buttonText - writes custom text for the submit button;
-
-Wrapper component for form fields
-
-```bash
-<FormWrapper errors={errors} form={defaultValue}>
-    fields form
-<FormWrapper/>
+<CustomLink>something link</CustoLink>
 ```
 
 Props:
 
-- form - see the data props in the Form component described earlier;
-- errors - an array of objects that contains information about errors in form fields. The array element must conform to the ErrorMessages interface.
+- to - indicates a link, required props;
+- className - adding a class for a button, optional props, defaults to empty string. The component uses one default classes: link, it can be overridden;
+- textCenter - set centered caption link text, optional props, defaults to true.
+
+Component Text
 
 ```bash
-interface ErrorMessages {
-    field: string;
-    message: string[];
-}
-```
-
-Text box component
-
-```bash
-<Input
-    rules={{ requiredInputRules, emailRules }}
-    placeholder="Email"
-    type="text"
-/>
+<Text>something text</Text>
 ```
 
 Props:
 
-- type - input type;
-- classNames - writes custom classes for the input tag;
-- placeholder - placeholder for text field;
-- rules - validation rules for the text field. For validation, it is necessary to create an object of rules according to which the text field will be validated. At this point in time, text fields are validated using the following interface RulesValidationInterface;
-- name - the name of the text box;
-- defaultValue - default value;
-- errorMessage - field validation error message;
+- tag - indicates a tag for component, optional props default to string 'span';
+- className - adding a class for the component, required props, set the value to default class 'subtitle-h1' or 'subtitle-h2';
 
-The fields classNames, name, defaultValue, errorMessage are optional.
+Component Typography
+
+```bash
+<Typography></Typography>
+```
+
+Props:
+
+- tag - indicates a tag for component, optional props default to string 'span';
+- className - adding a class for the component, required props, set the value to default class 'h1' or tag h1 or 'h2' or tag h2. The component uses one default classes: typography, it can be overridden;;
