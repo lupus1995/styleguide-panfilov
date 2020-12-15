@@ -5,6 +5,9 @@
   "main": "build/index.js",
   "module": "build/index.es.js",
   "homepage": "https://github.com/lupus1995/styleguide-panfilov/blob/master/README.md",
+  "publishConfig": {
+    "registry": "https://www.npmjs.com/package/styleguide-panfilov"
+  },
   "keywords": [
     "react",
     "styleguide",
