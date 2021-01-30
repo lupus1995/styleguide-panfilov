@@ -1,6 +1,6 @@
 {
   "name": "styleguide-panfilov",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "style guide for projects",
   "main": "build/index.js",
   "module": "build/index.es.js",
